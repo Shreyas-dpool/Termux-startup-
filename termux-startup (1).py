@@ -1,10 +1,11 @@
 import os, json
 
-try:
-    bReport = os.popen("termux-battery-status").read()
-    bReport = json.loads(bReport)
-    bStatus = bReport['status']
 
+bReport = os.popen("termux-battery-status").read()
+bReport = json.loads(bReport)
+bStatus = bReport['status']
+
+try:
     nReport = os.popen("termux-notification-list").read()
     nReport = json.loads(nReport)
     lNoti = nReport[0]
